@@ -292,13 +292,27 @@
       "organization": "Eyevinn",
       "repository": "https://github.com/Eyevinn/moqlivemock",
       "draft_versions": ["draft-14", "draft-16"],
-      "notes": "Go implementation. Test client for MoQ interop testing.",
+      "notes": "Go implementation. Test client and live CMAF publisher. Publisher announces the moq-test/interop namespace for interop testing.",
       "roles": {
         "client": {
           "docker": {
             "image": "ghcr.io/eyevinn/mlmtest:latest",
             "notes": "Published from Eyevinn/moqlivemock CI. Supports RELAY_URL, TESTCASE, TLS_DISABLE_VERIFY, DRAFT env vars."
           }
+        },
+        "publisher": {
+          "remote": [
+            {
+              "url": "https://moqlivemock.demo.osaas.io:443/moq",
+              "transport": "webtransport",
+              "notes": "Live CMAF publisher (video + audio + subtitles)"
+            },
+            {
+              "url": "moqt://moqlivemock.demo.osaas.io:443",
+              "transport": "quic",
+              "notes": "Live CMAF publisher (video + audio + subtitles)"
+            }
+          ]
         }
       }
     },
