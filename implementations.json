@@ -134,6 +134,11 @@
               "notes": "CI-deployed relay"
             }
           ]
+        },
+        "client": {
+          "docker": {
+            "image": "ghcr.io/openmoq/moqx-interop-client:latest"
+          }
         }
       }
     },
