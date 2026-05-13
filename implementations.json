@@ -332,6 +332,7 @@
         "relay": {
           "docker": {
             "image": "ghcr.io/englishm/moq-interop-runner-xquic-moq-relay:latest",
+            "url": "moqt://relay:4443",
             "notes": "Pre-built on GHCR (amd64). To build from source: ./builds/xquic/build.sh --target relay"
           }
         },
@@ -367,7 +368,7 @@
     "2. Fill in metadata: name, organization, repository, draft_versions",
     "3. Add 'roles' object with supported roles (relay, client, publisher, subscriber)",
     "4. For each role, specify either/both:",
-    "   - 'docker': image name, build info, and any adapter needed",
+    "   - 'docker': image name, optional relay 'url' override, build info, and any adapter needed",
     "   - 'remote': array of endpoints with transport type (quic or webtransport)",
     "5. Transport types:",
     "   - 'quic': Raw QUIC (moqt:// URL scheme)",
